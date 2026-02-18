@@ -5,23 +5,23 @@ const ServicesSection = () => {
   const services = [
     {
       id: "01.",
-      title: "Post-Tensioning Design Coordination",
-      description: "We work alongside structural engineers to ensure accurate tendon layout, profiling, anchorage systems, and stressing sequences, fully compliant with project specifications and design standards."
+      title: "Optimized Engineering Solutions",
+      description: "Enhancing conventional and post-tensioned structural systems through value engineering to improve performance, reduce material consumption, and control construction costs."
     },
     {
       id: "02.",
-      title: "Supply of Post-Tensioning Systems & Materials",
-      description: "We supply high-quality PT tendons, anchorages, ducts, and accessories, ensuring compatibility, durability, and performance."
+      title: "Structural Integrity & Restoration",
+      description: "Structural design consultancy and repair services for reinforced concrete and post-tensioned buildings, ensuring safety, durability, and long-term performance."
     },
     {
       id: "03.",
-      title: "Stressing & Grouting Services",
-      description: "Our controlled post-tensioning stressing and grouting services ensure proper force transfer, crack control, and long-term protection of tendons."
+      title: "Execution Oversight & Quality Control",
+      description: "Comprehensive engineering and construction supervision for buildings, bridges, silos, retaining walls, and civil infrastructure projects."
     },
     {
       id: "04.",
-      title: "Structural Strengthening & PT Repairs",
-      description: "We offer post-tensioning repair, modification, and strengthening solutions for existing concrete structures to improve load capacity and service life."
+      title: "Bridge Support & Bearing Systems",
+      description: "Design coordination and supply support for pot bearings, spherical bearings, and elastomeric bearings to accommodate movement and ensure long-term bridge stability."
     }
   ];
 
@@ -38,7 +38,8 @@ const ServicesSection = () => {
           </div>
 
           <h2 className="text-3xl md:text-5xl font-semibold leading-tight text-gray-900">
-            Delivering reliable construction services from planning through completion.
+          Integrated construction and post-tensioning services
+
           </h2>
 
           <div>

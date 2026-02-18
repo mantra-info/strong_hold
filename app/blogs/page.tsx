@@ -45,18 +45,18 @@ const staggerContainer: Variants = {
 
 
 const recentPosts = [
-  { id: 1, date: "02 Jan, 2026", title: "Why Proper Planning Is the Key to Successful Construction", image: "/api/placeholder/180/100" },
-  { id: 2, date: "02 Jan, 2026", title: "Why Proper Planning Is the Key to Successful Construction", image: "/api/placeholder/180/100" },
-  { id: 3, date: "02 Jan, 2026", title: "Why Proper Planning Is the Key to Successful Construction", image: "/api/placeholder/180/100" },
+  { id: 1, date: "02 Jan, 2026", title: "Why Proper Planning Is the Key to Successful Construction", image: "/blog1.png" },
+  { id: 2, date: "02 Jan, 2026", title: "Why Proper Planning Is the Key to Successful Construction", image: "/blog2.png" },
+  { id: 3, date: "02 Jan, 2026", title: "Why Proper Planning Is the Key to Successful Construction", image: "/blog3.png" },
 ];
 
 const allPosts = [
-  { id: 1, date: "14 Jan, 2026", title: "From Blueprint to Build: How the Construction Process Really Works", image: "/api/placeholder/400/250" },
-  { id: 2, date: "02 Jan, 2026", title: "The Most Common Construction Mistakes (and How to Avoid Them)", image: "/api/placeholder/400/250" },
-  { id: 3, date: "02 Jan, 2026", title: "Why Proper Planning Is the Key to Successful Construction", image: "/api/placeholder/400/250" },
-  { id: 4, date: "14 Jan, 2026", title: "From Blueprint to Build: How the Construction Process Really Works", image: "/api/placeholder/400/250" },
-  { id: 5, date: "02 Jan, 2026", title: "The Most Common Construction Mistakes (and How to Avoid Them)", image: "/api/placeholder/400/250" },
-  { id: 6, date: "02 Jan, 2026", title: "Why Proper Planning Is the Key to Successful Construction", image: "/api/placeholder/400/250" },
+  { id: 1, date: "14 Jan, 2026", title: "From Blueprint to Build: How the Construction Process Really Works", image: "/blog4.png" },
+  { id: 2, date: "02 Jan, 2026", title: "The Most Common Construction Mistakes (and How to Avoid Them)", image: "/blog5.png" },
+  { id: 3, date: "02 Jan, 2026", title: "Why Proper Planning Is the Key to Successful Construction", image: "/blog6.png" },
+  { id: 4, date: "14 Jan, 2026", title: "From Blueprint to Build: How the Construction Process Really Works", image: "/blog7.png" },
+  { id: 5, date: "02 Jan, 2026", title: "The Most Common Construction Mistakes (and How to Avoid Them)", image: "/blog8.png" },
+  { id: 6, date: "02 Jan, 2026", title: "Why Proper Planning Is the Key to Successful Construction", image: "/blog9.png" },
 ];
 
 export default function BlogSection() {
@@ -100,7 +100,7 @@ export default function BlogSection() {
             <div className="group cursor-pointer flex-grow">
               <div className="relative aspect-[5/3] w-full overflow-hidden rounded-lg mb-6 shadow-sm">
                 <Image
-                  src="/api/placeholder/800/600"
+                  src="/blog1.png"
                   alt="Popular Post"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"

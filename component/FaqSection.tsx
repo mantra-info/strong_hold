@@ -9,23 +9,64 @@ interface Pageprops{
 const FAQSection = ({page}:Pageprops) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const faqs = [
+  const faqs = page === "services"
+    ? [
+        {
+          question: "What types of construction projects do you handle?",
+          answer:
+            "We undertake residential, commercial, and industrial construction projects. Our expertise covers both civil construction works and specialised post-tensioning systems. Each project is handled based on its structural needs, scale, and design requirements."
+        },
+        {
+          question: "Do you provide complete project support?",
+          answer:
+            "Yes, we provide end-to-end support from initial planning to final execution. Our team coordinates with engineers, consultants, and site teams to ensure smooth progress. This approach helps deliver projects efficiently and with consistent quality."
+        },
+        {
+          question: "How can I get a quotation for my project?",
+          answer:
+            "You can request a quotation by contacting us and sharing your project details or drawings. We carefully review the scope of work and technical requirements and provide a clear and transparent cost estimate."
+        },
+        {
+          question: "What determines the project timeline?",
+          answer:
+            "Project timelines depend on the scope, complexity, and site conditions of the work. After reviewing the project, we define a realistic execution schedule and follow structured planning to ensure timely completion."
+        },
+        {
+          question: "How do you ensure quality and safety on site?",
+          answer:
+            "We follow strict quality control and safety practices on all projects. Approved materials, trained supervision, and regular inspections are part of our process. This ensures safe execution and long-term structural reliability."
+        },
+        {
+          question: "Do you provide warranty or post-project support?",
+          answer:
+            "Yes, we stand by the quality of our work. We offer post-project support in line with industry standards and project agreements, giving our clients confidence in the durability and performance of our structures."
+        }
+      ]
+    : [
     {
-      question: "What types of construction projects do you handle?",
-      answer: "We specialize in a wide range of projects including high-rise residential buildings, commercial complexes, industrial warehouses, and specialized post-tensioning infrastructure."
+      question: "What services does Stronghold specialise in?",
+      answer: "We specialize in post-tensioning solutions and civil construction services. We deliver structurally efficient post-tensioned systems and execute civil works with precision, supporting residential, commercial, and industrial projects of varying scales."
     },
     {
       id: 2, 
-      question: "How do I get a quote for my project?",
-      answer: "You can click the 'Get a Free Call' button or contact us through our form. Our engineers will review your structural plans and provide a detailed estimate within 3-5 business days."
+      question: "Why choose post-tensioning for construction?",
+      answer: "Post-tensioning enhances structural performance by increasing load capacity, reducing slab thickness, and minimising cracks. It allows for longer spans, material optimisation, and improved durability, making it a smart and cost-effective solution for modern construction."
     },
     {
-      question: "What is your project timeline?",
-      answer: "Timelines vary based on project scale. A standard PT slab installation typically takes 7-14 days depending on the square footage and complexity of the design."
+      question: "What types of civil construction projects do you undertake?",
+      answer: "We undertake a wide range of civil construction works including foundations, structural frameworks, slabs, beams, and complete building execution. Our approach focuses on technical accuracy, efficient coordination, and long-term structural reliability."
     },
     {
-      question: "What is your warranty policy?",
-      answer: "We provide comprehensive structural warranties on all our post-tensioning works, ensuring long-term durability and compliance with international engineering standards."
+      question: "How does Stronghold manage project execution?",
+      answer: "Each project is managed through detailed planning, technical supervision, and coordinated site execution. Our experienced engineers and site teams ensure that post-tensioning and civil works are completed efficiently, safely, and in accordance with approved specifications."
+    },
+     {
+      question: "How do you maintain quality and safety on-site?",
+      answer: "We follow stringent quality control measures, use certified materials, and adhere to industry-standard safety practices. Regular inspections, skilled workmanship, and strict process monitoring ensure consistent quality and safe execution across all projects."
+    },
+     {
+      question: "How can I get started with Stronghold?",
+      answer: "You can connect with our team by sharing your project details and requirements. We offer professional consultation, technical guidance, and reliable execution support to help you move forward with confidence."
     }
   ];
 
@@ -51,10 +92,11 @@ const FAQSection = ({page}:Pageprops) => {
 
           <div className="flex flex-col gap-2">
             <p className="text-lg font-semibold text-gray-900">
-              You have different questions?
+              Looking for clarity before you begin?
+
             </p>
             <p className="text-[#6B7C8B] max-w-sm">
-              Our team will answer all your questions; we ensure a quick response.
+            Our team is always ready to guide you with the right information and timely support, ensuring confidence at every stage of your project.
             </p>
           </div>
 

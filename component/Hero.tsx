@@ -24,7 +24,8 @@ const Hero = () => {
             <div className="max-w-7xl mx-auto w-full z-10">
                
                 <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-medium max-w-5xl leading-[1.2] tracking-tight mb-8 md:mb-12">
-                    Building Stronger Structures with <span className="text-blue-400">Post-Tensioning</span> Excellence
+                  Engineering Smarter, Stronger Concrete Structures
+
                 </h1>
 
                

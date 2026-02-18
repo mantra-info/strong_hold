@@ -3,10 +3,10 @@ import Image from 'next/image';
 const WhyChooseUs = () => {
   const features = [
     "On-Time, On-Budget Delivery",
-    "Clear Communication",
     "Proven Experience",
-    "Quality Craftsmanship",
     "Safety-First Culture",
+    "Clear Communication",
+    "Quality Craftsmanship",
     "Long-Term Partnership Approach",
   ];
 

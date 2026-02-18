@@ -33,7 +33,8 @@ const HighlightSection = () => {
 
                
                 <h2 className="text-white text-3xl md:text-5xl lg:text-6xl font-bold leading-tight md:leading-[1.2]">
-                    Proven results across commercial and industrial projects.
+                  Leading Structural Engineering & Construction Experts
+
                 </h2>
             </div>
         </section>

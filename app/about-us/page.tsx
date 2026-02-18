@@ -5,23 +5,23 @@ import { ArrowUpRight, Heart, Shield, Users, Zap } from 'lucide-react';
 const VALUES = [
   {
     icon: <Shield size={20} className="text-[#00D1FF]" />,
-    title: "Integrity",
-    description: "We believe in doing the right thing, every time. Our projects are built on honesty, transparency, and ethical practices, ensuring trust with our clients, partners, and communities."
+    title: "Engineering Excellence",
+    description: "We are driven by technical accuracy and structural performance. Every post-tensioning system and civil construction activity is executed with engineering precision, ensuring safety, efficiency, and long-term durability."
   },
   {
     icon: <Zap size={20} className="text-[#00D1FF]" />,
-    title: "Innovation",
-    description: "We embrace modern construction methods and technologies to improve efficiency and performance. Continuous improvement allows us to deliver smarter, more effective building solutions."
+    title: "Quality & Compliance",
+    description: "Quality is embedded in every stage of our work. From material selection to site execution, we follow strict quality control procedures and comply with industry standards to deliver structures that perform reliably over time."
   },
   {
     icon: <Heart size={20} className="text-[#00D1FF]" />,
-    title: "Customer Focus",
-    description: "Our clients' needs guide every decision we make. We work closely with them to understand their vision and deliver solutions that align with their goals and budget."
+    title: "Safety Responsibility",
+    description: "Safety is a non-negotiable priority with us. We implement disciplined site practices, trained supervision, and proven methodologies to ensure a safe working environment for our teams and stakeholders."
   },
   {
     icon: <Users size={20} className="text-[#00D1FF]" />,
-    title: "Teamwork",
-    description: "Great projects are built by great teams. We foster collaboration among our professionals, subcontractors, and clients to achieve the best possible outcomes."
+    title: "Collaborative Approach",
+    description: "Successful projects are built through coordination. We work closely with developers, consultants, and contractors to ensure seamless integration, clear communication, and smooth execution from start to finish."
   }
 ];
 
@@ -64,14 +64,13 @@ const StorySection = () => {
                 <h3 className="text-2xl font-bold text-gray-900">StrongHold Structure</h3>
                 <div className="flex flex-col gap-5 text-[#6B7C8B] leading-relaxed max-w-xl text-sm md:text-base lg:text-[17px]">
                   <p>
-                    We are a dedicated construction company with a strong focus on post-tensioning systems. 
-                    Our expertise lies in designing, supplying, and executing post-tensioned structures 
-                    that offer superior performance, reduced material usage, and long-term durability.
+                  We are a specialised construction company delivering advanced post-tensioning solutions alongside dependable civil construction services. We focus on creating structurally efficient buildings that optimise materials, enhance performance, and ensure long-term reliability.
                   </p>
                   <p>
-                    With years of industry experience, we work closely with developers, consultants, 
-                    and contractors to deliver reliable and efficient post-tensioning solutions 
-                    tailored to each project&apos;s needs.
+             With a wide range of industry experience, our team collaborates closely with developers, structural consultants, and contractors to deliver customized solutions for each project. From planning to execution, we approach every structure with technical accuracy and accountability. <br />
+             Our strength lies in combining engineering expertise with practical site execution, ensuring projects are delivered safely, efficiently, and to the highest standards.
+
+
                   </p>
                 </div>
                 <div className="pt-4">
@@ -178,8 +177,9 @@ const StorySection = () => {
             <div className="flex flex-col gap-6 relative z-10">
               <h2 className="text-2xl md:text-4xl font-bold text-gray-900">Founder&apos;s Message</h2>
               <div className="flex flex-col gap-6 text-[#6B7C8B] leading-relaxed text-base md:text-[17px]">
-                <p>When I founded this company, my goal was to bring precision, integrity, and technical excellence to the construction industry—particularly in post-tensioning, where expertise truly matters.</p>
-                <p>Post-tensioning is not just a method; it is an engineering solution that requires accuracy, experience, and responsibility. Our team is committed to delivering safe, efficient, and durable structures while maintaining strong relationships with our clients and partners.</p>
+                <p>We began with a simple idea, to build structures the right way, with honesty, care, and technical responsibility.</p>
+                <p>Over the years, I’ve learned that post-tensioning is not just about systems and calculations. It’s about precision on site, attention to detail, and taking responsibility for every structure we deliver. That mindset shapes how we work every day.</p>
+                <p>What matters most to me is the trust our clients place in us. We respect that trust by focusing on quality, safety, and timely execution, while working closely with everyone involved in the project. As we continue to grow, our commitment remains the same, to build strong, reliable structures and lasting relationships.</p>
               </div>
             </div>
 
