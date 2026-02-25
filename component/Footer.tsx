@@ -1,13 +1,13 @@
 'use client'
 import Image from 'next/image';
 import Link from 'next/link';
+import OpenContactButton from '@/component/OpenContactButton';
 import { 
   ArrowUpRight, 
   Facebook, 
   Instagram, 
   Youtube, 
-  ArrowUp,
-  Phone
+  ArrowUp
 } from 'lucide-react';
 
 const Footer = () => {
@@ -29,10 +29,10 @@ const Footer = () => {
             
             <div className="flex flex-wrap gap-4">
               
-              <button className="bg-[#00D1FF] hover:bg-cyan-400 text-black px-8 py-4 rounded-2xl flex items-center gap-3 font-bold transition-all active:scale-95">
+              <OpenContactButton className="bg-[#00D1FF] hover:bg-cyan-400 text-black px-8 py-4 rounded-2xl flex items-center gap-3 font-bold transition-all active:scale-95">
                 Call Us Now
                 <ArrowUpRight size={20} />
-              </button>
+              </OpenContactButton>
 
               
               <button className="bg-white hover:bg-gray-100 text-black px-8 py-4 rounded-2xl flex items-center gap-3 font-bold transition-all active:scale-95">
@@ -98,7 +98,7 @@ const Footer = () => {
               <Link href="#" className="hover:text-[#00D1FF] transition-colors">About Us</Link>
               <Link href="#" className="hover:text-[#00D1FF] transition-colors">Services</Link>
               <Link href="#" className="hover:text-[#00D1FF] transition-colors">Works</Link>
-              <Link href="#" className="hover:text-[#00D1FF] transition-colors">FAQ's</Link>
+              <Link href="#" className="hover:text-[#00D1FF] transition-colors">FAQ&apos;s</Link>
               <Link href="#" className="hover:text-[#00D1FF] transition-colors">Blogs</Link>
             </div>
           </div>

@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
+import OpenContactButton from '@/component/OpenContactButton';
 
 const ServicesSection = () => {
   const services = [
@@ -43,14 +43,14 @@ const ServicesSection = () => {
           </h2>
 
           <div>
-            <button className="bg-[#002D5B] hover:bg-[#003B73] text-white px-8 py-4 rounded-2xl flex items-center gap-3 font-semibold transition-all active:scale-95">
+            <OpenContactButton className="bg-[#002D5B] hover:bg-[#003B73] text-white px-8 py-4 rounded-2xl flex items-center gap-3 font-semibold transition-all active:scale-95">
               Get a Quote
               <ArrowUpRight size={20} />
-            </button>
+            </OpenContactButton>
           </div>
 
           
-          <div className="hidden lg:block absolute -bottom-[450px] -left-[100px] w-[600px] h-[600px] opacity-100">
+          <div className="hidden lg:block absolute -bottom-[450px] -left-[100px] w-[600px] h-[600px] opacity-100 pointer-events-none">
             
           </div>
         </div>

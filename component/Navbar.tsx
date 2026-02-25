@@ -1,5 +1,5 @@
 "use client"; // Required for useState in Next.js App Router
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 import Image from 'next/image';
@@ -9,13 +9,37 @@ import ContactModal from './ContactusModal';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
- const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const navLinks = [
     { name: 'About Us', href: '/about-us' },
     { name: 'Services', href: '/services' },
     { name: 'Works', href: '/works' },
     { name: 'Blogs', href: '/blogs' },
   ];
+
+  const openContactModal = useCallback(() => {
+    setIsOpen(false);
+    setIsModalOpen(true);
+  }, []);
+
+  useEffect(() => {
+    const handleOpenContact = () => openContactModal();
+    const handleHashContact = () => {
+      if (window.location.hash === '#contact-us') {
+        openContactModal();
+        window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+      }
+    };
+
+    window.addEventListener('open-contact-modal', handleOpenContact as EventListener);
+    window.addEventListener('hashchange', handleHashContact);
+    handleHashContact();
+
+    return () => {
+      window.removeEventListener('open-contact-modal', handleOpenContact as EventListener);
+      window.removeEventListener('hashchange', handleHashContact);
+    };
+  }, [openContactModal]);
 
   return (
     <>
@@ -45,7 +69,7 @@ const Navbar = () => {
         <div className="hidden md:block">
           <button 
             type='button'
-            onClick={() => {setIsOpen(false),setIsModalOpen(true)}}
+            onClick={openContactModal}
             className="bg-[#003B73] hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl flex items-center gap-2 transition-all text-sm font-semibold"
           >
             Contact Us
@@ -74,7 +98,7 @@ const Navbar = () => {
           ))}
           <button 
             type='button'
-            onClick={() => {setIsOpen(false),setIsModalOpen(true)}}
+            onClick={openContactModal}
             className="bg-[#003B73] text-white p-4 rounded-xl flex items-center justify-center gap-2 font-semibold"
           >
             Contact Us

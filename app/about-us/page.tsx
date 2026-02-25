@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { ArrowUpRight, Heart, Shield, Users, Zap } from 'lucide-react';
+import OpenContactButton from '@/component/OpenContactButton';
 
 
 const VALUES = [
@@ -74,10 +75,10 @@ const StorySection = () => {
                   </p>
                 </div>
                 <div className="pt-4">
-                  <button className="bg-[#002D5B] hover:bg-[#003B73] text-white px-8 py-4 rounded-2xl flex items-center justify-center gap-3 font-semibold transition-all active:scale-95 shadow-lg shadow-blue-900/10 w-full sm:w-fit">
+                  <OpenContactButton className="bg-[#002D5B] hover:bg-[#003B73] text-white px-8 py-4 rounded-2xl flex items-center justify-center gap-3 font-semibold transition-all active:scale-95 shadow-lg shadow-blue-900/10 w-full sm:w-fit">
                     Get a Quote
                     <ArrowUpRight size={20} />
-                  </button>
+                  </OpenContactButton>
                 </div>
               </div>
 

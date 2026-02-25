@@ -10,6 +10,53 @@ interface ContactModalProps {
   onClose: () => void;
 }
 
+type FormData = {
+  name: string;
+  phone: string;
+  email: string;
+  location: string;
+  message: string;
+};
+
+type FormErrors = Partial<Record<keyof FormData, string>>;
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const nameRegex = /^[A-Za-z.' -]+$/;
+
+const validateForm = (values: FormData): FormErrors => {
+  const errors: FormErrors = {};
+  const trimmedName = values.name.trim();
+  const trimmedLocation = values.location.trim();
+  const trimmedMessage = values.message.trim();
+  const normalizedPhone = values.phone.replace(/\D/g, '');
+
+  if (trimmedName.length < 2) {
+    errors.name = 'Name must be at least 2 characters.';
+  } else if (!nameRegex.test(trimmedName)) {
+    errors.name = 'Name can contain only letters, spaces, and . - \'.';
+  }
+
+  if (normalizedPhone.length < 10 || normalizedPhone.length > 15) {
+    errors.phone = 'Enter a valid phone number (10 to 15 digits).';
+  }
+
+  if (values.email.trim() && !emailRegex.test(values.email.trim())) {
+    errors.email = 'Enter a valid email address.';
+  }
+
+  if (trimmedLocation.length < 2) {
+    errors.location = 'Location must be at least 2 characters.';
+  }
+
+  if (trimmedMessage.length < 10) {
+    errors.message = 'Message must be at least 10 characters.';
+  } else if (trimmedMessage.length > 1000) {
+    errors.message = 'Message must be less than 1000 characters.';
+  }
+
+  return errors;
+};
+
 export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const [formData, setFormData] = useState({
     name: '',
@@ -18,6 +65,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     location: '',
     message: '',
   });
+  const [formErrors, setFormErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitState, setSubmitState] = useState<{
     type: 'success' | 'error' | null;
@@ -28,12 +76,23 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const nextValue = name === 'phone' ? value.slice(0, 20) : value;
+    setFormData((prev) => ({ ...prev, [name]: nextValue }));
+    if (formErrors[name as keyof FormData]) {
+      setFormErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitState({ type: null, message: '' });
+    const errors = validateForm(formData);
+    if (Object.keys(errors).length > 0) {
+      setFormErrors(errors);
+      return;
+    }
+
+    setFormErrors({});
     setIsSubmitting(true);
 
     try {
@@ -53,6 +112,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         message: 'Thanks for reaching out. We will contact you shortly.',
       });
       setFormData({ name: '', phone: '', email: '', location: '', message: '' });
+      setFormErrors({});
     } catch (error) {
       setSubmitState({
         type: 'error',
@@ -194,8 +254,13 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                             value={formData.name}
                             onChange={handleChange}
                             required
-                            className="w-full h-11 md:h-12 px-4 rounded-lg border border-slate-300 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-100 transition-all text-sm"
+                            maxLength={80}
+                            aria-invalid={Boolean(formErrors.name)}
+                            className={`w-full h-11 md:h-12 px-4 rounded-lg border text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 transition-all text-sm ${
+                              formErrors.name ? 'border-red-400 focus:ring-red-100' : 'border-slate-300 focus:ring-blue-100'
+                            }`}
                           />
+                          {formErrors.name && <p className="text-xs text-red-600">{formErrors.name}</p>}
                         </div>
                         <div className="flex flex-col gap-1.5">
                           <label className="text-xs md:text-sm font-bold text-slate-900">Mobile Number</label>
@@ -206,8 +271,14 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                             value={formData.phone}
                             onChange={handleChange}
                             required
-                            className="w-full h-11 md:h-12 px-4 rounded-lg border border-slate-300 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-100 transition-all text-sm"
+                            inputMode="tel"
+                            maxLength={20}
+                            aria-invalid={Boolean(formErrors.phone)}
+                            className={`w-full h-11 md:h-12 px-4 rounded-lg border text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 transition-all text-sm ${
+                              formErrors.phone ? 'border-red-400 focus:ring-red-100' : 'border-slate-300 focus:ring-blue-100'
+                            }`}
                           />
+                          {formErrors.phone && <p className="text-xs text-red-600">{formErrors.phone}</p>}
                         </div>
                       </div>
 
@@ -223,8 +294,13 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                             placeholder="Enter your mail address"
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full h-11 md:h-12 px-4 rounded-lg border border-slate-300 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-100 transition-all text-sm"
+                            maxLength={120}
+                            aria-invalid={Boolean(formErrors.email)}
+                            className={`w-full h-11 md:h-12 px-4 rounded-lg border text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 transition-all text-sm ${
+                              formErrors.email ? 'border-red-400 focus:ring-red-100' : 'border-slate-300 focus:ring-blue-100'
+                            }`}
                           />
+                          {formErrors.email && <p className="text-xs text-red-600">{formErrors.email}</p>}
                         </div>
                         <div className="flex flex-col gap-1.5">
                           <label className="text-xs md:text-sm font-bold text-slate-900">Location</label>
@@ -235,8 +311,13 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                             value={formData.location}
                             onChange={handleChange}
                             required
-                            className="w-full h-11 md:h-12 px-4 rounded-lg border border-slate-300 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-100 transition-all text-sm"
+                            maxLength={120}
+                            aria-invalid={Boolean(formErrors.location)}
+                            className={`w-full h-11 md:h-12 px-4 rounded-lg border text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 transition-all text-sm ${
+                              formErrors.location ? 'border-red-400 focus:ring-red-100' : 'border-slate-300 focus:ring-blue-100'
+                            }`}
                           />
+                          {formErrors.location && <p className="text-xs text-red-600">{formErrors.location}</p>}
                         </div>
                       </div>
 
@@ -250,8 +331,13 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                           value={formData.message}
                           onChange={handleChange}
                           required
-                          className="w-full p-3 md:p-4 rounded-lg border border-slate-300 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-100 text-sm resize-none"
+                          maxLength={1000}
+                          aria-invalid={Boolean(formErrors.message)}
+                          className={`w-full p-3 md:p-4 rounded-lg border text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 text-sm resize-none ${
+                            formErrors.message ? 'border-red-400 focus:ring-red-100' : 'border-slate-300 focus:ring-blue-100'
+                          }`}
                         />
+                        {formErrors.message && <p className="text-xs text-red-600">{formErrors.message}</p>}
                       </div>
 
                  

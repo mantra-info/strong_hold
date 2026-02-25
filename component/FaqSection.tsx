@@ -2,12 +2,13 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, ChevronDown } from 'lucide-react';
+import OpenContactButton from '@/component/OpenContactButton';
 
 interface Pageprops{
   page?:string
 }
 const FAQSection = ({page}:Pageprops) => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const faqs = page === "services"
     ? [
@@ -70,7 +71,7 @@ const FAQSection = ({page}:Pageprops) => {
     }
   ];
 
-  const toggleAccordion = (index:any) => {
+  const toggleAccordion = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
@@ -82,7 +83,7 @@ const FAQSection = ({page}:Pageprops) => {
         <div className="flex flex-col gap-8">
           <div>
             <span className="px-4 py-1.5 border border-gray-400/30 rounded-lg text-sm font-medium text-gray-700 bg-white/20">
-              FAQ's
+              FAQ&apos;s
             </span>
           </div>
 
@@ -100,10 +101,10 @@ const FAQSection = ({page}:Pageprops) => {
             </p>
           </div>
 
-          <button className="bg-[#002D5B] hover:bg-[#003B73] text-white px-8 py-4 rounded-2xl flex items-center justify-center gap-3 font-semibold transition-all w-fit active:scale-95 shadow-lg shadow-blue-900/10">
+          <OpenContactButton className="bg-[#002D5B] hover:bg-[#003B73] text-white px-8 py-4 rounded-2xl flex items-center justify-center gap-3 font-semibold transition-all w-fit active:scale-95 shadow-lg shadow-blue-900/10">
             Get a Free Call
             <ArrowUpRight size={20} />
-          </button>
+          </OpenContactButton>
         </div>
 
        
