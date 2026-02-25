@@ -4,7 +4,7 @@ interface ContactRequestBody {
   name?: string;
   phone?: string;
   email?: string;
-  serviceType?: string;
+  location?: string;
   message?: string;
 }
 
@@ -32,12 +32,12 @@ export async function POST(req: Request) {
   const name = body.name?.trim();
   const phone = body.phone?.trim();
   const email = body.email?.trim();
-  const serviceType = body.serviceType?.trim();
+  const location = body.location?.trim();
   const message = body.message?.trim();
 
-  if (!name || !phone || !serviceType || !message) {
+  if (!name || !phone || !location || !message) {
     return NextResponse.json(
-      { error: 'Name, phone, service type and message are required.' },
+      { error: 'Name, phone, location and message are required.' },
       { status: 400 }
     );
   }
@@ -46,7 +46,7 @@ export async function POST(req: Request) {
     `Name: ${name}`,
     `Phone: ${phone}`,
     `Email: ${email || 'Not provided'}`,
-    `Service Type: ${serviceType}`,
+    `Location: ${location}`,
     '',
     'Message:',
     message,
@@ -55,7 +55,7 @@ export async function POST(req: Request) {
   const safeName = escapeHtml(name);
   const safePhone = escapeHtml(phone);
   const safeEmail = escapeHtml(email || 'Not provided');
-  const safeServiceType = escapeHtml(serviceType);
+  const safeLocation = escapeHtml(location);
   const safeMessage = escapeHtml(message).replace(/\n/g, '<br/>');
 
   try {
@@ -76,7 +76,7 @@ export async function POST(req: Request) {
         <p><strong>Name:</strong> ${safeName}</p>
         <p><strong>Phone:</strong> ${safePhone}</p>
         <p><strong>Email:</strong> ${safeEmail}</p>
-        <p><strong>Service Type:</strong> ${safeServiceType}</p>
+        <p><strong>Location:</strong> ${safeLocation}</p>
         <p><strong>Message:</strong><br/>${safeMessage}</p>
       `,
       }),

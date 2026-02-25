@@ -17,9 +17,9 @@ const Hero = () => {
                 <img src="/fallback-image.jpg" alt="Background" className="w-full h-full object-cover" />
             </video>
 
-            
-            <div className="absolute inset-0 bg-black/50 z-[1]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40 z-[1]" />
+        
+          <div className="absolute inset-0 bg-black/20 z-[1]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/20 z-[1]" /> 
 
             <div className="max-w-7xl mx-auto w-full z-10">
                
