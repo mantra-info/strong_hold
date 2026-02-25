@@ -23,12 +23,9 @@ export const metadata: Metadata = {
     "Stronghold Structures delivers professional post-tensioning and civil construction solutions with a focus on engineering precision, quality, and long-term structural performance.",
   applicationName: "Stronghold Structures",
   icons: {
-    icon: [
-      { url: "/logo.png", type: "image/png" },
-      { url: "/favicon.ico" },
-    ],
-    apple: [{ url: "/logo.png", type: "image/png" }],
-    shortcut: ["/favicon.ico"],
+    icon: [{ url: "/icon.png", type: "image/png" }],
+    apple: [{ url: "/icon.png", type: "image/png" }],
+    shortcut: ["/icon.png"],
   },
   openGraph: {
     title: "Stronghold Structures",
