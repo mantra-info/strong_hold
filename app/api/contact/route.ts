@@ -118,7 +118,7 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         from: resendFromEmail,
         to: [contactToEmail],
-        subject: `New Website Lead | ${name} | ${location}`,
+        subject: `New Lead | ${name} | ${location}`,
         reply_to: email || undefined,
         text: lines.join('\n'),
         html: `
