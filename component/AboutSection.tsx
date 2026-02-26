@@ -17,11 +17,9 @@ const AboutSection = () => {
 
         
             <h2 className="text-3xl md:text-5xl font-medium leading-tight text-gray-900 max-w-2xl">
-           Built on technical expertise and execution excellence
-
+          Civil contractors specializing in high-performance construction & Post-Tensioning
             </h2>
 
-       
             <div className="flex flex-col sm:flex-row rounded-3xl overflow-hidden shadow-sm">
             
               <div className="bg-[#EBF9FB] p-8 flex-1">
@@ -30,7 +28,9 @@ const AboutSection = () => {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Our Vision</h3>
                 <p className="text-sm leading-relaxed text-gray-500">
-                To grow as a dependable post-tensioning and construction partner, recognized for technical competence, innovative solutions, and responsible concrete construction practices.
+            
+To change India's standards for structural integrity by combining adequate Post-Tensioning technology with strict civil construction norms. This would create a legacy of smarter buildings that survive longer.
+
 
                 </p>
               </div>
@@ -41,7 +41,8 @@ const AboutSection = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-3">Our Mission</h3>
                 <p className="text-sm leading-relaxed text-white/80">
-                To deliver efficient post-tensioning and construction services that improve structural performance, optimize project costs, and ensure durability through sound engineering, quality workmanship, and strict safety standards.
+                To give builders and architects construction solutions that are value-engineered. We use our expertise in both Post-Tensioning and general civil contracting to create settings that are fundamentally better, more cost-effective, and higher-performing.
+
 
                 </p>
               </div>

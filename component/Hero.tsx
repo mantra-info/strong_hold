@@ -14,7 +14,7 @@ const Hero = () => {
                 className="absolute top-0 left-0 w-full h-full object-cover z-0"
             >
                 <source src="/hero-video.mp4" type="video/mp4" />
-                <img src="/fallback-image.jpg" alt="Background" className="w-full h-full object-cover" />
+                <img src="/SH-Img1.webp" alt="Background" className="w-full h-full object-cover" />
             </video>
 
         
@@ -24,14 +24,11 @@ const Hero = () => {
             <div className="max-w-7xl mx-auto w-full z-10">
                
                 <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-medium max-w-5xl leading-[1.2] tracking-tight mb-8 md:mb-12">
-                  Engineering Smarter, Stronger Concrete Structures
-
+                  Precision Civil Engineering. Advanced Structural Solutions
                 </h1>
 
-               
                 <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
-
-                    
+  
                     <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                         <Link href={'/about-us'} className="bg-[#003B73] text-white px-8 py-4 rounded-2xl flex items-center justify-center gap-3 font-semibold hover:bg-blue-700 transition-all active:scale-95 w-full sm:w-auto">
                             Who We Are?

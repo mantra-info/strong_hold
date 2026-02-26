@@ -6,23 +6,23 @@ import OpenContactButton from '@/component/OpenContactButton';
 const VALUES = [
   {
     icon: <Shield size={20} className="text-[#00D1FF]" />,
-    title: "Engineering Excellence",
-    description: "We are driven by technical accuracy and structural performance. Every post-tensioning system and civil construction activity is executed with engineering precision, ensuring safety, efficiency, and long-term durability."
+    title: "Structural Intelligence",
+    description: "By adding Post-Tensioning to our civil works, we let architects build spaces without columns and with broader spans. This implies that our clients get more usable square feet and a better, more efficient use of concrete and steel. We combine the \"smartness\" of a specialist with the \"grit\" of a general contractor."
   },
   {
     icon: <Zap size={20} className="text-[#00D1FF]" />,
-    title: "Quality & Compliance",
-    description: "Quality is embedded in every stage of our work. From material selection to site execution, we follow strict quality control procedures and comply with industry standards to deliver structures that perform reliably over time."
+    title: "Quality & Integrity",
+    description: "We see every project as a personal promise to do a good job. We follow a strict, open approach no matter what we're doing, whether it's laying a foundation or putting stress on a high-tensile tendon. We design structures that not only meet rules but also earn the trust of the people who live in them for life by combining traditional civil craftsmanship with international PT standards."
   },
   {
     icon: <Heart size={20} className="text-[#00D1FF]" />,
-    title: "Safety Responsibility",
-    description: "Safety is a non-negotiable priority with us. We implement disciplined site practices, trained supervision, and proven methodologies to ensure a safe working environment for our teams and stakeholders."
+    title: "Culture of Collective Safety",
+    description: "We take our responsibilities for managing huge internal forces during post-tensioning very seriously. We make our safety rules more human by hiring highly trained supervisors and enforcing strict site management. This way, every worker gets home safely and every project stays a safe investment for the developer."
   },
   {
     icon: <Users size={20} className="text-[#00D1FF]" />,
-    title: "Collaborative Approach",
-    description: "Successful projects are built through coordination. We work closely with developers, consultants, and contractors to ensure seamless integration, clear communication, and smooth execution from start to finish."
+    title: "Synergistic Partnership",
+    description: "We don't only work as a contractor, we work with you as a structural partner. We make sure that the Civil + PT workflow goes smoothly by keeping lines of communication open between developers, consultants, and our site teams. We keep the construction site from getting too crazy so you can focus on the big picture, knowing that the technical details are in good hands."
   }
 ];
 
@@ -65,13 +65,14 @@ const StorySection = () => {
                 <h3 className="text-2xl font-bold text-gray-900">StrongHold Structure</h3>
                 <div className="flex flex-col gap-5 text-[#6B7C8B] leading-relaxed max-w-xl text-sm md:text-base lg:text-[17px]">
                   <p>
-                  We are a specialised construction company delivering advanced post-tensioning solutions alongside dependable civil construction services. We focus on creating structurally efficient buildings that optimise materials, enhance performance, and ensure long-term reliability.
+                We are a civil contracting company that works in many different fields. We employ both new Post-Tensioning technology and old-fashioned building skills. We know how to build structural frames that use space better, require fewer resources, and last longer than most RCC methods.
+
                   </p>
                   <p>
-             With a wide range of industry experience, our team collaborates closely with developers, structural consultants, and contractors to deliver customized solutions for each project. From planning to execution, we approach every structure with technical accuracy and accountability. <br />
-             Our strength lies in combining engineering expertise with practical site execution, ensuring projects are delivered safely, efficiently, and to the highest standards.
-
-
+           We assist developers construct sensibly by making it easier for them to get from complicated structural design to strict site implementation. Our experts make sure that every slab and column is as strong and affordable as possible, whether they are building a sophisticated home or a tall business center.
+                  </p>
+                  <p>
+                    We don't merely follow plans at StrongHold; we also give technical advice. We use a disciplined, process-driven approach to every project that blends a thorough grasp of how concrete works with safety and engineering integrity.
                   </p>
                 </div>
                 <div className="pt-4">
@@ -178,14 +179,15 @@ const StorySection = () => {
             <div className="flex flex-col gap-6 relative z-10">
               <h2 className="text-2xl md:text-4xl font-bold text-gray-900">Founder&apos;s Message</h2>
               <div className="flex flex-col gap-6 text-[#6B7C8B] leading-relaxed text-base md:text-[17px]">
-                <p>We began with a simple idea, to build structures the right way, with honesty, care, and technical responsibility.</p>
-                <p>Over the years, I’ve learned that post-tensioning is not just about systems and calculations. It’s about precision on site, attention to detail, and taking responsibility for every structure we deliver. That mindset shapes how we work every day.</p>
-                <p>What matters most to me is the trust our clients place in us. We respect that trust by focusing on quality, safety, and timely execution, while working closely with everyone involved in the project. As we continue to grow, our commitment remains the same, to build strong, reliable structures and lasting relationships.</p>
+                <p>“We don't just use concrete and steel to build, we also use trust. You have to follow the rules to get that. I founded StrongHold to make sure that the Indian construction sector is held to a high technical standard. To me, Post-Tensioning isn't just a process, it's a pledge to be careful and accurate. We keep our promise to our clients with every foundation we build and every wire we tension.</p>
+                <p>We respect your idea and show it by paying attention to the small details that make sure your project is done honestly, safely, and to the highest standards. We at StrongHold build strength that lasts.”
+</p>
+             
               </div>
             </div>
 
             <div className="pt-8 border-t border-blue-200/60 relative z-10">
-              <h4 className="text-xl font-bold text-gray-900">Abraham John</h4>
+              <h4 className="text-xl font-bold text-gray-900">Mir Kasim</h4>
               <p className="text-sm font-semibold text-blue-400 uppercase tracking-widest mt-1">Managing Director</p>
             </div>
           </div>

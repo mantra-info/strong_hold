@@ -53,13 +53,17 @@ const FAQSection = ({page}:Pageprops) => {
       question: "Why choose post-tensioning for construction?",
       answer: "Post-tensioning enhances structural performance by increasing load capacity, reducing slab thickness, and minimising cracks. It allows for longer spans, material optimisation, and improved durability, making it a smart and cost-effective solution for modern construction."
     },
-    {
-      question: "What types of civil construction projects do you undertake?",
-      answer: "We undertake a wide range of civil construction works including foundations, structural frameworks, slabs, beams, and complete building execution. Our approach focuses on technical accuracy, efficient coordination, and long-term structural reliability."
+     {
+      question: " Is Post-Tensioning only for large commercial buildings? ",
+      answer: "Not at all. PT is increasingly used in luxury residential projects to create wide, open living areas without intrusive columns, and in villas to allow for more flexible floor plans."
     },
     {
-      question: "How does Stronghold manage project execution?",
-      answer: "Each project is managed through detailed planning, technical supervision, and coordinated site execution. Our experienced engineers and site teams ensure that post-tensioning and civil works are completed efficiently, safely, and in accordance with approved specifications."
+      question: "Does Stronghold handle standard RCC construction?",
+      answer: "Yes. While we are specialists in Post-Tensioning, we are first and foremost civil contractors. We handle complete structural work from the ground up, integrating PT only where it adds value to the project."
+    },
+    {
+      question: "Can you work with my existing architect/engineer?",
+      answer: "Absolutely. We often act as a specialized sub-contractor for PT works or as the main civil contractor working in tandem with your design team to optimize the building’s framework."
     },
      {
       question: "How do you maintain quality and safety on-site?",

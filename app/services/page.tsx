@@ -137,37 +137,37 @@ const services = [
   {
     id: "01.",
     title: "Structural Planning & Engineering Support",
-    description: "We support projects from the early planning stage by offering practical engineering input for both post-tensioned and conventional civil structures. Our involvement helps align design intent with site realities, ensuring smoother execution and structurally sound outcomes.",
+    description: "We add value right away by delivering helpful engineering advice for both standard civil frames and post-tensioned ones. By being involved, we make sure that complicated design aims are in line with what is really going on at the site. This lets the process move more smoothly and produces better structural results.",
     image: "/services1.png", 
   },
   {
     id: "02.",
     title: "Post-Tensioning Systems & Material Supply",
-    description: "We provide complete post-tensioning systems, including tendons, anchorages, and accessories required for execution. All materials are selected to meet performance standards and ensure reliability throughout the life of the structure.",
+    description: "We sell complete, high-performance post-tensioning systems that include with all the special tools and parts you need for a small field, like tendons and anchorages. Every item is carefully picked to meet or exceed international standards. This means that the building will be absolutely safe and work well for its whole life.",
     image: "/services6.png",
   },
   {
     id: "03.",
     title: "Post-Tensioning Execution, Stressing & Protection",
-    description: "Our experienced site teams handle post-tensioning execution, including stressing and protection works. Careful control during these stages ensures effective load transfer, reduced cracking, and long-term durability of structural elements.",
+    description: "Our skilled site teams handle all of the most crucial elements of post-tensioning, from high-precision stressing to the last protective work. We make sure that the load transfer works, that the structure doesn't break as much, and that every item we touch lasts a long time by keeping rigorous control during these processes.",
     image: "/services2.png",
   },
   {
     id: "04.",
     title: "Civil Construction & Structural Execution",
-    description: "We undertake civil construction works across residential, commercial, and industrial projects. From foundations to structural frames, our focus remains on accuracy, coordination, safety, and consistent quality on site.",
+    description: "We do all kinds of civil construction work for residences, companies, and factories. Our main goals are to make sure that our products are always of excellent quality, from the initial foundation to the last structural frame. We do this by being technically precise, coordinating the site smoothly, and creating a culture of safety.",
     image: "/services3.png",
   },
   {
     id: "05.",
     title: "Structural Strengthening & Rehabilitation",
-    description: "We deliver strengthening and rehabilitation solutions for existing structures using both civil construction methods and post-tensioning techniques. These services help improve load capacity, extend service life, and restore structural performance.",
+    description: "We use both traditional civil engineering methods and specialized post-tensioning techniques to make structures that are already there stronger. These treatments are aimed to help existing assets survive longer, boost load capacity, and bring structural performance back up to modern engineering standards.",
     image: "/services4.png",
   },
   {
     id: "06.",
     title: "Post-Tensioned & Conventional Structural Systems",
-    description: "We execute post-tensioned slabs, beams, and structural components alongside conventional RCC systems. This combined expertise allows us to recommend and implement the most efficient structural solution for each project.",
+    description: "We make both regular RCC systems and more complex post-tensioned beams and slabs. We can examine each project separately and provide the best, most cost-effective structural solution because we have both of these skills. This might be sophisticated PT innovation or standard civil reliability.",
     image: "/services5.png",
   },
 ];

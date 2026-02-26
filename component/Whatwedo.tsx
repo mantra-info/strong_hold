@@ -5,23 +5,23 @@ const ServicesSection = () => {
   const services = [
     {
       id: "01.",
-      title: "Optimized Engineering Solutions",
-      description: "Enhancing conventional and post-tensioned structural systems through value engineering to improve performance, reduce material consumption, and control construction costs."
+      title: "General Civil Contracting",
+      description: "We handle everything about the structure's lifetime, from excavating the hole and installing the foundation to putting up the last RCC framework. We work on homes, companies, and factories, and we make sure that every brick and beam meets high quality standards."
     },
     {
       id: "02.",
-      title: "Structural Integrity & Restoration",
-      description: "Structural design consultancy and repair services for reinforced concrete and post-tensioned buildings, ensuring safety, durability, and long-term performance."
+      title: "Specialized Post-Tensioning (PT)",
+      description: "We are one of the few professional PT contractors in India, and we offer full service, from coordinating designs to characterizing tendons to exact stressing. With PT, we can make your projects have thinner slabs and greater spaces without columns."
     },
     {
       id: "03.",
-      title: "Execution Oversight & Quality Control",
-      description: "Comprehensive engineering and construction supervision for buildings, bridges, silos, retaining walls, and civil infrastructure projects."
+      title: "Structural Design & Value Engineering",
+      description: "We don't just stick to plans, we make them better. Our team works with your architects to develop Value Engineering choices that reduce the amount of materials such as steel and concrete that are wasted without putting the safety of the building at danger."
     },
     {
       id: "04.",
-      title: "Bridge Support & Bearing Systems",
-      description: "Design coordination and supply support for pot bearings, spherical bearings, and elastomeric bearings to accommodate movement and ensure long-term bridge stability."
+      title: " Infrastructure & Support Systems",
+      description: "We provide specialist technical support for infrastructure projects, like installing bridge bearings  like Pot, Spherical, and Elastomeric and making ancient buildings stronger by modernizing them."
     }
   ];
 
@@ -38,7 +38,7 @@ const ServicesSection = () => {
           </div>
 
           <h2 className="text-3xl md:text-5xl font-semibold leading-tight text-gray-900">
-          Integrated construction and post-tensioning services
+         Built on Technical Expertise & Execution Excellence
 
           </h2>
 
