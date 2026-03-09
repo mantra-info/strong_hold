@@ -7,14 +7,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const projects = [
   { id: 1, title: "Anwar Villa, Kochi", status: "Ongoing", image: "/anvarvilla.png" },
-  { id: 2, title: "Bizopp Mall, Kochi", status: "Ongoing", image: "/bizzopmall.png" },
+  { id: 2, title: "Bizopp Mall, Kochi", status: "Ongoing", image: "/bizopp_mall.jpeg" },
   { id: 3, title: "Chamakala Masjid, Kochi", status: "Ongoing", image: "/chammakala.jpg" },
-  { id: 4, title: "Nila Mansion, Kottayam", status: "Completed", image: "/nilamansion.png" },
+  { id: 4, title: "Nila Mansion, Kottayam", status: "Completed", image: "/nila_mansion.jpg" },
   { id: 5, title: "Happy Mall, Trissur", status: "Completed", image: "/happymall.png" },
   { id: 6, title: "Church, Kochi", status: "Completed", image: "/churchkochi.png" },
   { id: 7, title: "Modern Apartment, Kochi", status: "Completed", image: "/modernapartment.jpg" },
-  { id: 8, title: "Sunset Villa, Idukki",status: "Completed", image: "/anvarvilla.png" },
-  { id: 9, title: "Central Plaza, Kochi", status: "Completed",image: "/bizzopmall.png" },
+  { id: 8, title: "Sunset Villa, Idukki",status: "Completed", image: "/sunset_villa_idukki.webp" },
+  { id: 9, title: "Central Plaza, Kochi", status: "Completed",image: "/central_plaza.jpg" },
 ];
 
 const categories = ["All Works", "Ongoing", "Completed"];
