@@ -85,7 +85,7 @@ const Footer = () => {
             <div className="flex flex-col gap-4">
               <h4 className="text-gray-400 font-medium">Contact Us</h4>
               <div className="flex flex-col gap-1 text-[#00D1FF] font-medium">
-                <Link href="mailto:hello@stronghold.in">hello@stronghold.in</Link>
+                <Link href="mailto:ansa@strongholdstructures.in">ansa@strongholdstructures.in</Link>
                 <Link href="tel:+919876543210">+91 9876543210</Link>
               </div>
             </div>
