@@ -80,7 +80,10 @@ const FAQSection = ({page}:Pageprops) => {
   };
 
   return (
-    <section className={`${page==="services"?"bg-white":"bg-[#EBF9FB]"} py-20 md:py-32 px-6 md:px-12`}>
+    <section
+      id={page === "services" ? "services-faq" : "faq"}
+      className={`${page==="services"?"bg-white":"bg-[#EBF9FB]"} py-20 md:py-32 px-6 md:px-12`}
+    >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
         
       

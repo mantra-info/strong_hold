@@ -95,11 +95,11 @@ const Footer = () => {
           <div className="flex flex-col gap-6">
             <h4 className="text-gray-400 font-medium">Quick Links</h4>
             <div className="flex flex-col gap-4 text-white/90">
-              <Link href="#" className="hover:text-[#00D1FF] transition-colors">About Us</Link>
-              <Link href="#" className="hover:text-[#00D1FF] transition-colors">Services</Link>
-              <Link href="#" className="hover:text-[#00D1FF] transition-colors">Works</Link>
-              <Link href="#" className="hover:text-[#00D1FF] transition-colors">FAQ&apos;s</Link>
-              <Link href="#" className="hover:text-[#00D1FF] transition-colors">Blogs</Link>
+              <Link href="/about-us" className="hover:text-[#00D1FF] transition-colors">About Us</Link>
+              <Link href="/services" className="hover:text-[#00D1FF] transition-colors">Services</Link>
+              <Link href="/works" className="hover:text-[#00D1FF] transition-colors">Works</Link>
+              <Link href="/#faq" className="hover:text-[#00D1FF] transition-colors">FAQ&apos;s</Link>
+              <Link href="/blogs" className="hover:text-[#00D1FF] transition-colors">Blogs</Link>
             </div>
           </div>
 
