@@ -27,10 +27,9 @@ const VALUES = [
 ];
 
 const STATS = [
-  { value: "100%", label: "Client Satisfaction" },
-  { value: "6+", label: "Years Of Experience" },
-  { value: "25+", label: "Projects Completed" },
-  { value: "20+", label: "Professionals" },
+  { value: "10+", label: "Years Of Experience" },
+  { value: "100+", label: "Projects Completed" },
+  { value: "100+", label: "Professionals" },
 ];
 
 const StorySection = () => {

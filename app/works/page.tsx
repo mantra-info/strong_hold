@@ -39,7 +39,7 @@ export default function WorksSection() {
             Solutions
           </span>
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900">
-            Our Works
+            Our Major Works
           </h1>
         </div>
       </motion.div>
