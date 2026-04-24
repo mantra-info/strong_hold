@@ -150,21 +150,9 @@ const StorySection = () => {
       </section>
 
      
-      <section className="bg-[#EBF9FB] py-2 lg:py-2 px-6 overflow-hidden">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2  items-center">
-          
-          <div className="relative flex items-center justify-center">
-          
-            <div className="absolute w-[120%] h-[120%] md:w-[140%] md:h-[140%] opacity-100 z-0">
-               {/* <Image src="/logo-icon.png" fill alt="bg" className="object-contain" /> */}
-            </div>
-
-            <div className="relative z-10 w-full max-w-[550px] aspect-[4/5]">
-              <Image src="/founder.png" fill alt="Abraham John" className="object-contain" priority />
-            </div>
-          </div>
-
-          <div className="relative flex flex-col gap-8">
+      <section className="bg-[#EBF9FB] py-10 lg:py-14 px-6 overflow-hidden">
+        <div className="max-w-4xl mx-auto">
+          <div className="relative flex flex-col gap-8 items-center text-center">
            
             <div className="absolute -top-12 right-0 w-24 h-20 md:w-32 md:h-24 opacity-20">
                <Image 
@@ -175,19 +163,14 @@ const StorySection = () => {
               />
             </div>
 
-            <div className="flex flex-col gap-6 relative z-10">
-              <h2 className="text-2xl md:text-4xl font-bold text-gray-900">Founder&apos;s Message</h2>
-              <div className="flex flex-col gap-6 text-[#6B7C8B] leading-relaxed text-base md:text-[17px]">
+            <div className="flex flex-col gap-6 relative z-10 items-center text-center">
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-900">Founders Message</h2>
+              <div className="flex flex-col gap-6 text-[#6B7C8B] leading-relaxed text-base md:text-[17px] max-w-2xl">
                 <p>“We don't just use concrete and steel to build, we also use trust. You have to follow the rules to get that. I founded StrongHold to make sure that the Indian construction sector is held to a high technical standard. To me, Post-Tensioning isn't just a process, it's a pledge to be careful and accurate. We keep our promise to our clients with every foundation we build and every wire we tension.</p>
                 <p>We respect your idea and show it by paying attention to the small details that make sure your project is done honestly, safely, and to the highest standards. We at StrongHold build strength that lasts.”
 </p>
              
               </div>
-            </div>
-
-            <div className="pt-8 border-t border-blue-200/60 relative z-10">
-              <h4 className="text-xl font-bold text-gray-900">Mir Kasim</h4>
-              <p className="text-sm font-semibold text-blue-400 uppercase tracking-widest mt-1">Managing Director</p>
             </div>
           </div>
         </div>
