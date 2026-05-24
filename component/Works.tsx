@@ -6,15 +6,15 @@ const RecentWorks = () => {
   const projects = [
     {
       title: "Anwar Villa, Kochi",
-      image: "/property1.png", 
+      image: "/projects/ANWAR.jpg.jpeg",
     },
     {
       title: "Bizopp Mall, Kochi",
-      image: "/property2.png",
+      image: "/projects/bizzop01.jpg.jpeg",
     },
     {
       title: "Chamakala Masjid, Kochi",
-      image: "/property3.png",
+      image: "/projects/MASJID01.jpg.jpeg",
     }
   ];
 

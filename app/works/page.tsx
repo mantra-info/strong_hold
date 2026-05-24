@@ -103,7 +103,7 @@ function ImageCarouselModal({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.25 }}
-      className="fixed inset-0 z-50 flex flex-col bg-zinc-950"
+      className="fixed inset-0 z-200 flex flex-col bg-zinc-950"
       onClick={onClose}
     >
       {/* Progress bar */}
@@ -145,12 +145,13 @@ function ImageCarouselModal({
           )}
       </div>
 
-      {/* Top-right close button — fixed, always on top */}
+      {/* Top-right close button */}
       <button
         onClick={onClose}
-        className="absolute top-5 right-5 z-50 flex items-center justify-center w-10 h-10 rounded-full bg-zinc-800 hover:bg-zinc-700 border border-zinc-600 hover:border-zinc-400 shadow-lg transition-all duration-200 hover:scale-110 group"
+        className="absolute top-4 right-4 z-50 flex items-center gap-1.5 px-3 py-2 rounded-full bg-white text-zinc-900 hover:bg-zinc-100 shadow-xl transition-all duration-200 hover:scale-105 font-semibold text-xs"
       >
-        <X className="w-5 h-5 text-zinc-300 group-hover:text-white transition-colors" />
+        <X className="w-3.5 h-3.5" />
+        Close
       </button>
 
       {/* Main image — clicking the dark padding area closes the modal */}
