@@ -128,7 +128,7 @@ const Footer = () => {
           </p>
           
           <div className="flex items-center gap-8">
-            <Link href="https://web.mantrainfotechs.com" target="_blank">
+            <Link href="https://mantrainfotechs.com" target="_blank">
               <p className="text-sm text-white/60">
                 Designed&Developed By <span className="text-[#00D1FF] font-bold">mits</span>
               </p>
