@@ -2,8 +2,10 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { MoveUpRight } from 'lucide-react';
 import { motion, Variants } from 'framer-motion';
+import { blogPosts } from './blogs-data';
 
 
 const fadeInUp: Variants = {
@@ -44,22 +46,11 @@ const staggerContainer: Variants = {
 };
 
 
-const recentPosts = [
-  { id: 1, date: "02 Jan, 2026", title: "Why Proper Planning Is the Key to Successful Construction", image: "/blog1.png" },
-  { id: 2, date: "02 Jan, 2026", title: "Why Proper Planning Is the Key to Successful Construction", image: "/blog2.png" },
-  { id: 3, date: "02 Jan, 2026", title: "Why Proper Planning Is the Key to Successful Construction", image: "/blog3.png" },
-];
-
-const allPosts = [
-  { id: 1, date: "14 Jan, 2026", title: "From Blueprint to Build: How the Construction Process Really Works", image: "/blog4.png" },
-  { id: 2, date: "02 Jan, 2026", title: "The Most Common Construction Mistakes (and How to Avoid Them)", image: "/blog5.png" },
-  { id: 3, date: "02 Jan, 2026", title: "Why Proper Planning Is the Key to Successful Construction", image: "/blog6.png" },
-  { id: 4, date: "14 Jan, 2026", title: "From Blueprint to Build: How the Construction Process Really Works", image: "/blog7.png" },
-  { id: 5, date: "02 Jan, 2026", title: "The Most Common Construction Mistakes (and How to Avoid Them)", image: "/blog8.png" },
-  { id: 6, date: "02 Jan, 2026", title: "Why Proper Planning Is the Key to Successful Construction", image: "/blog9.png" },
-];
-
 export default function BlogSection() {
+  const popularPost = blogPosts[0];
+  const recentPosts = blogPosts.slice(0, 3);
+  const allPosts = blogPosts.slice(3);
+
   return (
     <section className="w-full bg-white font-sans pb-20 overflow-hidden">
 
@@ -97,20 +88,20 @@ export default function BlogSection() {
             className="lg:col-span-2 flex flex-col"
           >
             <h2 className="text-xl font-bold text-slate-900 mb-8">Popular Post</h2>
-            <div className="group cursor-pointer flex-grow">
+            <Link href={`/blogs/${popularPost.slug}`} className="group cursor-pointer flex-grow block">
               <div className="relative aspect-[5/3] w-full overflow-hidden rounded-lg mb-6 shadow-sm">
                 <Image
-                  src="/blog1.png"
-                  alt="Popular Post"
+                  src={popularPost.image}
+                  alt={popularPost.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              <p className="text-[#94A3B8] text-sm font-medium mb-4">14 Jan, 2026</p>
+              <p className="text-[#94A3B8] text-sm font-medium mb-4">{popularPost.date}</p>
               <h3 className="text-2xl md:text-3xl font-bold text-slate-900 leading-tight group-hover:text-blue-800 transition-colors">
-                From Blueprint to Build: How the Construction Process Really Works
+                {popularPost.title}
               </h3>
-            </div>
+            </Link>
           </motion.div>
 
 
@@ -143,20 +134,22 @@ export default function BlogSection() {
                   <motion.div
                     key={post.id}
                     variants={fadeInUp}
-                    className="flex flex-col group cursor-pointer pb-6 lg:pb-0"
+                    className="pb-6 lg:pb-0"
                   >
-                    <div className="relative aspect-[16/7] w-full overflow-hidden rounded-lg mb-4 bg-slate-100">
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                    </div>
-                    <p className="text-[#94A3B8] text-xs font-medium mb-2">{post.date}</p>
-                    <h4 className="text-[15px] font-bold text-slate-900 leading-snug group-hover:text-blue-800 transition-colors">
-                      {post.title}
-                    </h4>
+                    <Link href={`/blogs/${post.slug}`} className="flex flex-col group cursor-pointer">
+                      <div className="relative aspect-[16/7] w-full overflow-hidden rounded-lg mb-4 bg-slate-100">
+                        <Image
+                          src={post.image}
+                          alt={post.title}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                      </div>
+                      <p className="text-[#94A3B8] text-xs font-medium mb-2">{post.date}</p>
+                      <h4 className="text-[15px] font-bold text-slate-900 leading-snug group-hover:text-blue-800 transition-colors">
+                        {post.title}
+                      </h4>
+                    </Link>
                   </motion.div>
                 ))}
               </motion.div>
@@ -193,20 +186,21 @@ export default function BlogSection() {
               <motion.div
                 key={post.id}
                 variants={fadeInUp}
-                className="group cursor-pointer"
               >
-                <div className="relative aspect-[16/10] overflow-hidden rounded-lg mb-4 bg-slate-100">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <p className="text-blue-400 text-xs font-medium mb-2">{post.date}</p>
-                <h3 className="text-lg font-bold text-slate-900 leading-tight group-hover:text-blue-800 transition-colors">
-                  {post.title}
-                </h3>
+                <Link href={`/blogs/${post.slug}`} className="group cursor-pointer block">
+                  <div className="relative aspect-[16/10] overflow-hidden rounded-lg mb-4 bg-slate-100">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                  <p className="text-blue-400 text-xs font-medium mb-2">{post.date}</p>
+                  <h3 className="text-lg font-bold text-slate-900 leading-tight group-hover:text-blue-800 transition-colors">
+                    {post.title}
+                  </h3>
+                </Link>
               </motion.div>
             ))}
           </motion.div>
