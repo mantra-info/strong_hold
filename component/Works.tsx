@@ -5,16 +5,16 @@ import Link from 'next/link';
 const RecentWorks = () => {
   const projects = [
     {
-      title: "Anwar Villa, Kochi",
-      image: "/projects/ANWAR.jpg.jpeg",
+      title: "Bizopp Mall, Thrissur",
+      image: "/projects/bizopp-mall-render.webp",
     },
     {
-      title: "Bizopp Mall, Kochi",
-      image: "/projects/bizzop01.jpg.jpeg",
+      title: "Juma Masjid, Chamakkala, Thrissur",
+      image: "/projects/chamakkala-masjid-render.webp",
     },
     {
-      title: "Chamakala Masjid, Kochi",
-      image: "/projects/MASJID01.jpg.jpeg",
+      title: "Claysys Lifestyle Apartment, Kochi",
+      image: "/projects/claysys-lifestyle-kochi.webp",
     }
   ];
 

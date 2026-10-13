@@ -5,46 +5,234 @@ import Image from 'next/image';
 import { MoveUpRight, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+type ProjectStatus = "Ongoing" | "Completed" | "Post Tensioning";
+
 interface Project {
   id: number;
   title: string;
-  status: string;
+  status: ProjectStatus;
+  details?: string;
   images: string[];
 }
 
 const projects: Project[] = [
+  // Ongoing
   {
     id: 1,
-    title: "Anwar Villa, Kochi",
+    title: "Bizopp Mall, Vadanappally, Thrissur",
     status: "Ongoing",
-    images: ["/projects/ANWAR.jpg.jpeg", "/projects/ANWAR01.jpg.jpeg"],
+    details: "G+2 · 15,010 sqft · Structural works in final stage",
+    images: ["/projects/bizopp-mall-render.webp", "/projects/bizopp-mall-site.webp"],
   },
   {
     id: 2,
-    title: "Bizopp Mall, Kochi",
+    title: "Anwar Residence, Chenthrappinni, Thrissur",
     status: "Ongoing",
-    images: ["/projects/bizzop01.jpg.jpeg", "/projects/bizzop002.jpg.jpeg"],
+    details: "G+1 · 13,960 sqft · Structure completed, block works at final stage",
+    images: ["/projects/anwar-residence-render.webp", "/projects/anwar-residence-site.webp"],
   },
   {
     id: 3,
-    title: "Chamakala Masjid, Kochi",
+    title: "Juma Masjid, Chamakkala, Thrissur",
     status: "Ongoing",
+    details: "G+1 · 14,978 sqft · Structural works in final stage",
+    images: ["/projects/chamakkala-masjid-render.webp", "/projects/chamakkala-masjid-site.webp"],
+  },
+  {
+    id: 4,
+    title: "Masjid at Ponmanikkudam, Perinjanam, Thrissur",
+    status: "Ongoing",
+    details: "G+1 · 16,340 sqft · Structural works in final stage",
+    images: ["/projects/ponmanikkudam-masjid-render.webp", "/projects/ponmanikkudam-masjid-site.webp"],
+  },
+  {
+    id: 5,
+    title: "GN Lights, Athani, Aluva",
+    status: "Ongoing",
+    details: "B+G+1 · 9,310 sqft · Structural frame completed",
     images: [
-      "/projects/MASJID01.jpg.jpeg",
-      "/projects/MASJID02.jpg.jpeg",
-      "/projects/MASJID002.jpg.jpeg",
-      "/projects/masjid%200002.jpg.jpeg",
+      "/projects/gn-lights-site-1.webp",
+      "/projects/gn-lights-site-2.webp",
+      "/projects/gn-lights-site-3.webp",
     ],
   },
-  { id: 4, title: "Nila Mansion, Kottayam", status: "Completed", images: ["/nila_mansion.jpg"] },
-  { id: 5, title: "Happy Mall, Trissur", status: "Completed", images: ["/happymall.png"] },
-  { id: 6, title: "Church, Kochi", status: "Completed", images: ["/churchkochi.png"] },
-  { id: 7, title: "Modern Apartment, Kochi", status: "Completed", images: ["/modernapartment.jpg"] },
-  { id: 8, title: "Sunset Villa, Idukki", status: "Completed", images: ["/sunset_villa_idukki.webp"] },
-  { id: 9, title: "Central Plaza, Kochi", status: "Completed", images: ["/central_plaza.jpg"] },
+  {
+    id: 6,
+    title: "Metco Aura Commercial Building, Edappally",
+    status: "Ongoing",
+    details: "B+G+3 · 8,200 sqft · PT raft slab & retaining wall in progress",
+    images: [
+      "/projects/metco-aura-site-1.webp",
+      "/projects/metco-aura-site-2.webp",
+      "/projects/metco-aura-site-3.webp",
+    ],
+  },
+  {
+    id: 7,
+    title: "Commercial Building, Changampuzha, Kochi",
+    status: "Ongoing",
+    details: "B+G+3 · 19,800 sqft · PT raft slab & retaining wall in progress",
+    images: [
+      "/projects/changampuzha-site-1.webp",
+      "/projects/changampuzha-site-2.webp",
+      "/projects/changampuzha-site-3.webp",
+    ],
+  },
+  // Completed
+  {
+    id: 8,
+    title: "Claysys Lifestyle Apartment, Kochi",
+    status: "Completed",
+    details: "B1+B2+G+14 · Structure completed in 8 months",
+    images: ["/projects/claysys-lifestyle-kochi.webp"],
+  },
+  {
+    id: 9,
+    title: "Chakolas Complex, Thrissur",
+    status: "Completed",
+    details: "G+5 · Architecture, structural design & construction",
+    images: ["/projects/chakolas-complex-thrissur.webp"],
+  },
+  {
+    id: 10,
+    title: "Masjid at Kakkodi, Kozhikode",
+    status: "Completed",
+    details: "B+G+2 · Architecture, structural design & construction",
+    images: ["/projects/masjid-kakkodi.webp"],
+  },
+  {
+    id: 11,
+    title: "Hotel AS Residency, Edappally",
+    status: "Completed",
+    details: "B+G+4 · Architecture, structural design & construction",
+    images: ["/projects/hotel-as-residency-edappally.webp"],
+  },
+  {
+    id: 12,
+    title: "Commercial Building, Kakkanad",
+    status: "Completed",
+    details: "B1+B2+G+7 · Architecture, structural design & construction",
+    images: ["/projects/commercial-kakkanad.webp"],
+  },
+  {
+    id: 13,
+    title: "Commercial Building, West Fort, Thrissur",
+    status: "Completed",
+    details: "B+G+3 · Architecture, structural design & construction",
+    images: ["/projects/commercial-west-fort-thrissur.webp"],
+  },
+  {
+    id: 14,
+    title: "Joseph Commercial Complex, Perinthalmanna",
+    status: "Completed",
+    details: "G+1 · Architecture, structural design & construction",
+    images: ["/projects/joseph-complex-perinthalmanna.webp"],
+  },
+  {
+    id: 15,
+    title: "Juma Masjid, Vallom, Perumbavoor",
+    status: "Completed",
+    details: "G+1 · 22 m PT span",
+    images: ["/projects/juma-masjid-vallom.webp"],
+  },
+  {
+    id: 16,
+    title: "SAM MG Mall, Eraviperoor, Thiruvalla",
+    status: "Completed",
+    details: "Architecture, structural design, PMC & construction",
+    images: ["/projects/sam-mg-mall-thiruvalla.webp"],
+  },
+  {
+    id: 17,
+    title: "Josh Pavilion, Thodupuzha",
+    status: "Completed",
+    details: "Pre-engineered building · 24,000 sqft",
+    images: ["/projects/josh-pavilion-thodupuzha.webp"],
+  },
+  {
+    id: 18,
+    title: "KBC Wonder Homes Warehouse, Thiruvalla",
+    status: "Completed",
+    details: "Pre-engineered building · 16,000 sqft in 3 months",
+    images: ["/projects/kbc-warehouse-thiruvalla.webp"],
+  },
+  // Post tensioning — Chandigarh region
+  {
+    id: 19,
+    title: "Maat Pitah Gaudham Trust, Ambala Road",
+    status: "Post Tensioning",
+    details: "30 m span PT beam",
+    images: ["/projects/maat-pitah-ambala.webp"],
+  },
+  {
+    id: 20,
+    title: "Skyline Elevators Commercial Building, Zirakpur",
+    status: "Post Tensioning",
+    details: "PT slabs · Chandigarh",
+    images: ["/projects/skyline-zirakpur.webp"],
+  },
+  {
+    id: 21,
+    title: "Residence for Mr. Ashok Dua, Chandigarh",
+    status: "Post Tensioning",
+    details: "PT slabs · Sector 11B",
+    images: ["/projects/ashok-dua-chandigarh.webp"],
+  },
+  {
+    id: 25,
+    title: "Hotel Apartment Building, Kangra, Himachal",
+    status: "Post Tensioning",
+    details: "PT slabs",
+    images: ["/projects/hotel-kangra.webp"],
+  },
+  {
+    id: 22,
+    title: "United Technocrates Commercial Building, Mohali",
+    status: "Post Tensioning",
+    details: "PT slabs",
+    images: [
+      "/projects/united-technocrates-mohali-1.webp",
+      "/projects/united-technocrates-mohali-2.webp",
+    ],
+  },
+  {
+    id: 23,
+    title: "Brahma Kumaris Meditation Centre, Panchkula",
+    status: "Post Tensioning",
+    details: "PT slabs · Sector 2A",
+    images: [
+      "/projects/brahma-kumaris-panchkula-1.webp",
+      "/projects/brahma-kumaris-panchkula-2.webp",
+    ],
+  },
+  {
+    id: 24,
+    title: "Rakhra Associates Commercial Building, DLF Pinjore",
+    status: "Post Tensioning",
+    details: "PT slabs",
+    images: ["/projects/rakhra-pinjore-1.webp", "/projects/rakhra-pinjore-2.webp"],
+  },
 ];
 
-const categories = ["All Works", "Ongoing", "Completed"];
+const categories = ["All Works", "Ongoing", "Completed", "Post Tensioning"];
+
+const statusStyles: Record<ProjectStatus, { dot: string; modal: string; card: string }> = {
+  Ongoing: {
+    dot: "bg-orange-400",
+    modal: "border-orange-400/40 text-orange-300 bg-orange-400/10",
+    card: "border-orange-200 text-orange-400",
+  },
+  Completed: {
+    dot: "bg-emerald-400",
+    modal: "border-emerald-400/40 text-emerald-300 bg-emerald-400/10",
+    card: "border-emerald-200 text-emerald-400",
+  },
+  "Post Tensioning": {
+    dot: "bg-sky-400",
+    modal: "border-sky-400/40 text-sky-300 bg-sky-400/10",
+    card: "border-sky-200 text-sky-500",
+  },
+};
 
 function ImageCarouselModal({
   project,
@@ -121,18 +309,10 @@ function ImageCarouselModal({
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center gap-3">
-          <span
-            className={`w-2 h-2 rounded-full ${
-              project.status === "Ongoing" ? "bg-orange-400" : "bg-emerald-400"
-            }`}
-          />
+          <span className={`w-2 h-2 rounded-full ${statusStyles[project.status].dot}`} />
           <h2 className="text-white font-semibold text-base tracking-tight">{project.title}</h2>
           <span
-            className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold border ${
-              project.status === "Ongoing"
-                ? "border-orange-400/40 text-orange-300 bg-orange-400/10"
-                : "border-emerald-400/40 text-emerald-300 bg-emerald-400/10"
-            }`}
+            className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold border ${statusStyles[project.status].modal}`}
           >
             {project.status}
           </span>
@@ -264,7 +444,7 @@ export default function WorksSection() {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 pt-12">
         {/* Tabs */}
-        <div className="flex justify-center gap-8 md:gap-16 border-b border-slate-100 mb-12">
+        <div className="flex justify-center gap-5 sm:gap-8 md:gap-16 border-b border-slate-100 mb-12">
           {categories.map((tab) => (
             <button
               key={tab}
@@ -322,15 +502,14 @@ export default function WorksSection() {
                     {project.title}
                   </h3>
                   <span
-                    className={`px-3 py-0.5 rounded-full text-[10px] font-bold border ${
-                      project.status === "Ongoing"
-                        ? "border-orange-200 text-orange-400"
-                        : "border-emerald-200 text-emerald-400"
-                    }`}
+                    className={`shrink-0 px-3 py-0.5 rounded-full text-[10px] font-bold border ${statusStyles[project.status].card}`}
                   >
                     {project.status}
                   </span>
                 </div>
+                {project.details && (
+                  <p className="mt-1.5 text-xs text-slate-500">{project.details}</p>
+                )}
               </motion.div>
             ))}
           </AnimatePresence>

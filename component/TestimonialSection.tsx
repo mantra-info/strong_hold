@@ -5,14 +5,14 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       name: "Anwar & Family",
-      location: "Anwar Villa, Kochi",
+      location: "Anwar Residence, Chenthrappinni, Thrissur",
       initials: "AF",
       avatarBg: "bg-[#B2EBF2]", 
       thumbnail: "/testimonial1.png", 
     },
     {
       name: "Jhon David",
-      location: "Owner of Bizopp Mall, Kochi",
+      location: "Owner of Bizopp Mall, Thrissur",
       initials: "JD",
       avatarBg: "bg-[#1A1A1A]", 
       thumbnail: "/testimonial2.png",
