@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import AboutSection from "@/component/AboutSection";
 import BlogsSection from "@/component/BlogSection";
 import FAQSection from "@/component/FaqSection";
@@ -9,6 +10,16 @@ import TestimonialsSection from "@/component/TestimonialSection";
 import ServicesSection from "@/component/Whatwedo";
 import WhyChooseUs from "@/component/WhyChooseUs";
 import RecentWorks from "@/component/Works";
+
+export const metadata: Metadata = {
+  title: {
+    absolute:
+      "Stronghold Structures | Post-Tensioning & Civil Construction Company in Kochi",
+  },
+  description:
+    "Kochi-based post-tensioning and civil construction experts. Structural design, BOQ, PT slabs, prefabricated steel buildings and retrofitting for commercial, residential and institutional projects across India.",
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (

@@ -166,7 +166,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   Ready to Build Your Dream Project?
                 </h2>
                 <p className="text-slate-500 text-sm md:text-base max-w-md leading-relaxed">
-                  Whether you have a clear vision or need guidance, StrongHold is here to help. Let&apos;s collaborate.
+                  Whether you have a clear vision or need guidance, Stronghold is here to help. Let&apos;s collaborate.
                 </p>
               </div>
 
