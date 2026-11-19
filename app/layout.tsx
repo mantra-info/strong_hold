@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/component/Navbar";
 import Footer from "@/component/Footer";
+import Script from "next/script";
+import { JsonLd, siteConfig } from "@/app/site-config";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +16,26 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const gaId = process.env.NEXT_PUBLIC_GA_ID;
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "@id": `${siteConfig.url}/#organization`,
+  name: siteConfig.name,
+  url: siteConfig.url,
+  logo: `${siteConfig.url}/logo.png`,
+  image: `${siteConfig.url}/logo.png`,
+  description: siteConfig.description,
+  telephone: siteConfig.phone,
+  email: siteConfig.email,
+  address: { "@type": "PostalAddress", ...siteConfig.address },
+  areaServed: "IN",
+  sameAs: siteConfig.sameAs,
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: "Stronghold Structures",
     template: "%s | Stronghold Structures",
@@ -53,11 +74,26 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <JsonLd data={organizationSchema} />
         <Navbar />
         <main className="pt-20">
           {children}
         </main>
         <Footer />
+        {gaId && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${gaId}');`}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   );

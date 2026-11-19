@@ -3,7 +3,8 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { blogPosts, getBlogPostBySlug } from "@/app/blogs/blogs-data";
+import { blogPosts, getBlogPostBySlug, parsePostDate } from "@/app/blogs/blogs-data";
+import { JsonLd, siteConfig } from "@/app/site-config";
 
 type BlogDetailPageProps = {
   params: Promise<{
@@ -25,13 +26,20 @@ export async function generateMetadata({
 
   if (!post) {
     return {
-      title: "Blog Not Found | StrongHold",
+      title: "Blog Not Found",
     };
   }
 
   return {
-    title: `${post.title} | StrongHold`,
+    title: post.title,
     description: post.excerpt,
+    alternates: { canonical: `/blogs/${post.slug}` },
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.excerpt,
+      images: [post.image],
+    },
   };
 }
 
@@ -47,8 +55,21 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     .filter((item) => item.slug !== post.slug)
     .slice(0, 3);
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    image: `${siteConfig.url}${post.image}`,
+    datePublished: parsePostDate(post.date).toISOString().slice(0, 10),
+    mainEntityOfPage: `${siteConfig.url}/blogs/${post.slug}`,
+    author: { "@id": `${siteConfig.url}/#organization` },
+    publisher: { "@id": `${siteConfig.url}/#organization` },
+  };
+
   return (
     <main className="w-full bg-white font-sans overflow-hidden">
+      <JsonLd data={articleSchema} />
       <section className="bg-[#EBF9FE] py-16 px-6 md:px-12 lg:px-24">
         <div className="max-w-5xl mx-auto">
           <span className="inline-block px-4 py-1 rounded-sm border border-gray-300 text-xs font-medium text-gray-600 bg-white mb-6">

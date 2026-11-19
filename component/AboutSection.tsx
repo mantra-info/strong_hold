@@ -11,7 +11,7 @@ const AboutSection = () => {
           
             <div className="w-fit">
               <span className="px-4 py-1.5 border border-gray-300 rounded-lg text-sm font-medium text-gray-600">
-                About StrongHold
+                About Stronghold
               </span>
             </div>
 
@@ -54,7 +54,7 @@ To change India's standards for structural integrity by combining adequate Post-
                 href="/about-us"
                 className="inline-flex bg-[#002D5B] hover:bg-[#003B73] text-white px-8 py-4 rounded-2xl items-center gap-3 font-medium transition-all active:scale-95"
               >
-                More About StrongHold
+                More About Stronghold
                 <ArrowUpRight size={20} />
               </Link>
 

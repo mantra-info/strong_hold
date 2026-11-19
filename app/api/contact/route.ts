@@ -161,10 +161,10 @@ export async function POST(req: Request) {
         body: JSON.stringify({
           from: resendFromEmail,
           to: [email],
-          subject: 'Thank you for contacting StrongHold Structures',
+          subject: 'Thank you for contacting Stronghold Structures',
           text: `Dear ${name},
 
-Thank you for contacting StrongHold Structures.
+Thank you for contacting Stronghold Structures.
 
 We have received your enquiry and our team will review the details and reach out to you shortly.
 
@@ -175,11 +175,11 @@ Submitted details:
 - Location: ${location}
 
 Regards,
-StrongHold Structures`,
+Stronghold Structures`,
           html: `
             <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #0f172a; max-width: 640px;">
               ${logoBlock}
-              <h2 style="margin: 0 0 10px 0;">Thank You for Contacting StrongHold Structures</h2>
+              <h2 style="margin: 0 0 10px 0;">Thank You for Contacting Stronghold Structures</h2>
               <p style="margin: 0 0 12px 0;">Dear ${safeName},</p>
               <p style="margin: 0 0 12px 0;">
                 Thank you for reaching out to us. We have successfully received your enquiry.
@@ -194,7 +194,7 @@ StrongHold Structures`,
                 <p style="margin: 0;">Email: ${safeEmail}</p>
                 <p style="margin: 0;">Location: ${safeLocation}</p>
               </div>
-              <p style="margin: 14px 0 0 0;">Regards,<br/>StrongHold Structures Team</p>
+              <p style="margin: 14px 0 0 0;">Regards,<br/>Stronghold Structures Team</p>
             </div>
           `,
         }),

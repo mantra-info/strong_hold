@@ -3,7 +3,6 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { MoveUpRight } from 'lucide-react';
 import { motion, Variants } from 'framer-motion';
 import { blogPosts } from './blogs-data';
 
@@ -49,7 +48,7 @@ const staggerContainer: Variants = {
 export default function BlogSection() {
   const popularPost = blogPosts[0];
   const recentPosts = blogPosts.slice(0, 3);
-  const allPosts = blogPosts.slice(3);
+  const allPosts = blogPosts;
 
   return (
     <section className="w-full bg-white font-sans pb-20 overflow-hidden">
@@ -204,17 +203,6 @@ export default function BlogSection() {
               </motion.div>
             ))}
           </motion.div>
-        </div>
-
-
-        <div className="flex justify-center">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-2 px-10 py-3 border border-slate-300 rounded-lg text-sm font-bold text-slate-700 hover:bg-slate-50 transition-all shadow-sm"
-          >
-            Load More <MoveUpRight className="w-4 h-4" />
-          </motion.button>
         </div>
       </div>
     </section>

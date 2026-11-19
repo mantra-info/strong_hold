@@ -93,7 +93,7 @@ const Footer = () => {
               <h4 className="text-gray-400 font-medium">Contact Us</h4>
               <div className="flex flex-col gap-1 text-[#00D1FF] font-medium">
                 <Link href="mailto:leads@strongholdstructures.in">leads@strongholdstructures.in</Link>
-                <Link href="tel:+919876543210">+91 9656588444</Link>
+                <Link href="tel:+919656588444">+91 9656588444</Link>
               </div>
             </div>
           </div>
@@ -124,7 +124,7 @@ const Footer = () => {
        
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 border-t border-white/5 pt-10">
           <p className="text-sm text-white/60">
-            <span className="text-[#00D1FF]">© 2026</span> StrongHold . All Rights Reserved
+            <span className="text-[#00D1FF]">© 2026</span> Stronghold Structures. All Rights Reserved
           </p>
           
           <div className="flex items-center gap-8">

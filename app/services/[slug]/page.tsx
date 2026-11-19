@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getServiceBySlug, services } from "@/app/services/services-data";
+import { JsonLd, siteConfig } from "@/app/site-config";
 
 type ServiceDetailPageProps = {
   params: Promise<{
@@ -25,13 +26,14 @@ export async function generateMetadata({
 
   if (!service) {
     return {
-      title: "Service Not Found | StrongHold",
+      title: "Service Not Found",
     };
   }
 
   return {
-    title: `${service.title} | StrongHold`,
+    title: service.title,
     description: service.description,
+    alternates: { canonical: `/services/${service.slug}` },
   };
 }
 
@@ -45,8 +47,21 @@ export default async function ServiceDetailPage({
     notFound();
   }
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    description: service.description,
+    serviceType: service.title,
+    url: `${siteConfig.url}/services/${service.slug}`,
+    image: `${siteConfig.url}${service.image}`,
+    areaServed: "IN",
+    provider: { "@id": `${siteConfig.url}/#organization` },
+  };
+
   return (
     <main className="w-full bg-white font-sans overflow-hidden">
+      <JsonLd data={serviceSchema} />
       <section className="bg-[#EBF9FE] py-16 px-6 md:px-12 lg:px-24">
         <div className="max-w-5xl mx-auto">
           <span className="inline-block px-4 py-1 rounded-sm border border-gray-300 text-xs font-medium text-gray-600 bg-white mb-6">

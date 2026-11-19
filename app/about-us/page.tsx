@@ -1,7 +1,15 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import { ArrowUpRight, Heart, Shield, Users, Zap } from 'lucide-react';
 import OpenContactButton from '@/component/OpenContactButton';
 
+
+export const metadata: Metadata = {
+  title: 'About Us',
+  description:
+    'Learn about Stronghold Structures — 10+ years of combining civil construction with post-tensioning expertise, 100+ completed projects, and a team committed to quality, safety and structural integrity.',
+  alternates: { canonical: '/about-us' },
+};
 
 const VALUES = [
   {
@@ -42,12 +50,12 @@ const StorySection = () => {
             <div className="flex flex-col gap-6">
               <div className="w-fit">
                 <span className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white/50 backdrop-blur-sm">
-                  Welcome to StrongHold Structures
+                  Welcome to Stronghold Structures
                 </span>
               </div>
-              <h2 className="text-3xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.2] lg:leading-[1.1] text-gray-900 tracking-tight max-w-full lg:max-w-[65%]">
+              <h1 className="text-3xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.2] lg:leading-[1.1] text-gray-900 tracking-tight max-w-full lg:max-w-[65%]">
                 Delivering reliable construction through experience, accountability, and precision.
-              </h2>
+              </h1>
             </div>
           </div>
         </div>
@@ -61,7 +69,7 @@ const StorySection = () => {
                     Our Story
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">StrongHold Structure</h3>
+                <h3 className="text-2xl font-bold text-gray-900">Stronghold Structures</h3>
                 <div className="flex flex-col gap-5 text-[#6B7C8B] leading-relaxed max-w-xl text-sm md:text-base lg:text-[17px]">
                   <p>
                 We are a civil contracting company that works in many different fields. We employ both new Post-Tensioning technology and old-fashioned building skills. We know how to build structural frames that use space better, require fewer resources, and last longer than most RCC methods.
@@ -71,7 +79,7 @@ const StorySection = () => {
            We assist developers construct sensibly by making it easier for them to get from complicated structural design to strict site implementation. Our experts make sure that every slab and column is as strong and affordable as possible, whether they are building a sophisticated home or a tall business center.
                   </p>
                   <p>
-                    We don't merely follow plans at StrongHold; we also give technical advice. We use a disciplined, process-driven approach to every project that blends a thorough grasp of how concrete works with safety and engineering integrity.
+                    We don't merely follow plans at Stronghold; we also give technical advice. We use a disciplined, process-driven approach to every project that blends a thorough grasp of how concrete works with safety and engineering integrity.
                   </p>
                 </div>
                 <div className="pt-4">
@@ -86,7 +94,7 @@ const StorySection = () => {
                 <div className="relative w-full h-full rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white bg-gray-100">
                   <Image 
                     src="/aboutsection.png" 
-                    alt="StrongHold Construction Team"
+                    alt="Stronghold Construction Team"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 40vw"
@@ -133,7 +141,7 @@ const StorySection = () => {
             <div className="w-fit">
               <span className="px-4 py-1.5 border border-gray-300 rounded-lg text-sm font-medium text-gray-600">Our Commitment</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#001D3D] tracking-tight">Why Choose StrongHold?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#001D3D] tracking-tight">Why Choose Stronghold?</h2>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-12">
             {STATS.map((stat, index) => (
@@ -166,8 +174,8 @@ const StorySection = () => {
             <div className="flex flex-col gap-6 relative z-10 items-center text-center">
               <h2 className="text-2xl md:text-4xl font-bold text-gray-900">Founders Message</h2>
               <div className="flex flex-col gap-6 text-[#6B7C8B] leading-relaxed text-base md:text-[17px] max-w-2xl">
-                <p>“We don't just use concrete and steel to build, we also use trust. You have to follow the rules to get that. I founded StrongHold to make sure that the Indian construction sector is held to a high technical standard. To me, Post-Tensioning isn't just a process, it's a pledge to be careful and accurate. We keep our promise to our clients with every foundation we build and every wire we tension.</p>
-                <p>We respect your idea and show it by paying attention to the small details that make sure your project is done honestly, safely, and to the highest standards. We at StrongHold build strength that lasts.”
+                <p>“We don't just use concrete and steel to build, we also use trust. You have to follow the rules to get that. I founded Stronghold to make sure that the Indian construction sector is held to a high technical standard. To me, Post-Tensioning isn't just a process, it's a pledge to be careful and accurate. We keep our promise to our clients with every foundation we build and every wire we tension.</p>
+                <p>We respect your idea and show it by paying attention to the small details that make sure your project is done honestly, safely, and to the highest standards. We at Stronghold build strength that lasts.”
 </p>
              
               </div>
